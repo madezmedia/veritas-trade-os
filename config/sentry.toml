@@ -1,0 +1,17 @@
+[monitoring]
+pairs = ["BTC/USD", "ETH/USD", "SOL/USD"]
+interval_seconds = 30
+arbitrage_threshold_pct = 0.5
+
+[regime]
+lookback_hours = 24
+volatility_window_days = 30
+
+[risk]
+max_volatility_pct = 5.0
+min_liquidity_usd = 100000
+correlation_break_threshold = 0.3
+
+[alerts]
+risk_score_alert_threshold = 50
+opportunity_confidence_min = 0.7

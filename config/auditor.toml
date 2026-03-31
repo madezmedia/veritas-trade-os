@@ -1,0 +1,19 @@
+[registry]
+contract_address = "0x0000000000000000000000000000000000000000"
+chain_id = 84532
+rpc_url = "https://sepolia.base.org"
+
+[agent]
+private_key_env = "VERITAS_PRIVATE_KEY"
+identity_address = "0x0000000000000000000000000000000000000000"
+
+[attestation]
+batch_size = 10
+publish_interval_seconds = 300
+max_retries = 3
+gas_max_gwei = 50
+
+[rationale]
+model = "gemini-2.5-pro"
+max_tokens = 500
+temperature = 0.3

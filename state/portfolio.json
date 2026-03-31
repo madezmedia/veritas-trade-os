@@ -1,0 +1,13 @@
+{
+  "timestamp": null,
+  "status": "initialized",
+  "summary": {
+    "totalValue": 0,
+    "unrealizedPnL": 0,
+    "unrealizedPnLPct": 0,
+    "dailyPnL": 0,
+    "dailyPnLPct": 0
+  },
+  "positions": [],
+  "pendingOrders": []
+}

@@ -1,0 +1,54 @@
+{
+  "version": "1.0.0",
+  "lastUpdated": "2026-03-31T00:00:00Z",
+  "profile": {
+    "name": "Conservative Growth",
+    "riskTolerance": "medium",
+    "targetReturnPct": 20.0,
+    "maxDrawdownPct": 10.0
+  },
+  "limits": {
+    "maxPositionSize": 5000.0,
+    "maxLeverage": 2.0,
+    "maxOpenPositions": 5,
+    "maxDailyLossPct": 5.0,
+    "maxWeeklyLossPct": 10.0,
+    "maxCorrelationExposurePct": 50.0
+  },
+  "constraints": {
+    "minLiquidityUsd": 100000,
+    "maxSlippagePct": 0.5,
+    "minConfidence": 0.7,
+    "maxRiskScore": 60,
+    "allowedVenues": ["kraken", "aerodrome"],
+    "allowedPairs": [
+      "BTC/USD",
+      "ETH/USD",
+      "SOL/USD",
+      "BTC/USDT",
+      "ETH/USDT"
+    ],
+    "blacklistedPairs": [
+      "MEME/USD",
+      "SHIT/USD"
+    ]
+  },
+  "strategy": {
+    "preferredTypes": ["mean-reversion", "momentum"],
+    "avoidTypes": ["high-frequency", "scalping"],
+    "minRiskRewardRatio": 1.2,
+    "holdTimeMinutes": {
+      "min": 60,
+      "max": 10080
+    }
+  },
+  "alerts": {
+    "enabled": true,
+    "channels": ["slack"],
+    "thresholds": {
+      "dailyLossPct": 3.0,
+      "riskScore": 50,
+      "leverageUsedPct": 80.0
+    }
+  }
+}

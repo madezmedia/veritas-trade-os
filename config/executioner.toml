@@ -1,0 +1,19 @@
+[execution]
+default_venue = "kraken"
+max_slippage_pct = 0.5
+order_timeout_seconds = 30
+
+[routing]
+kraken_min_size_usd = 1000
+aerodrome_max_size_usd = 10000
+aerodrome_min_pool_depth_usd = 50000
+
+[fees]
+kraken_maker_pct = 0.16
+kraken_taker_pct = 0.26
+aerodrome_gas_estimate_gwei = 20
+
+[safety]
+max_retry_attempts = 2
+retry_delay_seconds = 5
+panic_on_daily_loss_pct = 5.0
