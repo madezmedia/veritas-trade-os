@@ -1,0 +1,143 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 1200 800">
+  <defs>
+    <!-- Gradients -->
+    <linearGradient id="bgGrad" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#1a1a2e"/>
+      <stop offset="50%" style="stop-color:#16213e"/>
+      <stop offset="100%" style="stop-color:#0f3460"/>
+    </linearGradient>
+    <linearGradient id="sentryGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4cc9f0"/>
+      <stop offset="100%" style="stop-color:#4361ee"/>
+    </linearGradient>
+    <linearGradient id="execGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#f72585"/>
+      <stop offset="100%" style="stop-color:#7209b7"/>
+    </linearGradient>
+    <linearGradient id="auditGrad" x1="0%" y1="0%" x2="100%" y2="0%">
+      <stop offset="0%" style="stop-color:#4ade80"/>
+      <stop offset="100%" style="stop-color:#22c55e"/>
+    </linearGradient>
+    <filter id="glow">
+      <feGaussianBlur stdDeviation="3" result="coloredBlur"/>
+      <feMerge>
+        <feMergeNode in="coloredBlur"/>
+        <feMergeNode in="SourceGraphic"/>
+      </feMerge>
+    </filter>
+  </defs>
+  
+  <!-- Background -->
+  <rect width="1200" height="800" fill="url(#bgGrad)"/>
+  
+  <!-- Title -->
+  <text x="600" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="36" font-weight="bold" fill="#fff">
+    🦅 Veritas-Trade OS — Architecture
+  </text>
+  <text x="600" y="95" text-anchor="middle" font-family="system-ui, sans-serif" font-size="16" fill="#888">
+    Verifiable, Multi-Chain AI Trading Orchestration Platform
+  </text>
+  
+  <!-- Agent Boxes -->
+  <!-- Sentry -->
+  <g transform="translate(100, 180)">
+    <rect width="280" height="200" rx="16" fill="rgba(76,201,240,0.1)" stroke="url(#sentryGrad)" stroke-width="2"/>
+    <rect width="280" height="50" rx="16" fill="url(#sentryGrad)"/>
+    <text x="140" y="33" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#fff">👁️ SENTRY</text>
+    <text x="20" y="80" font-family="system-ui, sans-serif" font-size="14" fill="#4cc9f0">Role: Market Monitor</text>
+    <text x="20" y="105" font-family="system-ui, sans-serif" font-size="14" fill="#aaa">Model: gemini-2.5-pro</text>
+    <text x="20" y="135" font-family="system-ui, sans-serif" font-size="13" fill="#888">• Monitors Kraken order books</text>
+    <text x="20" y="155" font-family="system-ui, sans-serif" font-size="13" fill="#888">• Tracks Aerodrome liquidity</text>
+    <text x="20" y="175" font-family="system-ui, sans-serif" font-size="13" fill="#888">• Detects opportunities + risks</text>
+  </g>
+  
+  <!-- Executioner -->
+  <g transform="translate(460, 180)">
+    <rect width="280" height="200" rx="16" fill="rgba(247,37,133,0.1)" stroke="url(#execGrad)" stroke-width="2"/>
+    <rect width="280" height="50" rx="16" fill="url(#execGrad)"/>
+    <text x="140" y="33" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#fff">⚔️ EXECUTIONER</text>
+    <text x="20" y="80" font-family="system-ui, sans-serif" font-size="14" fill="#f72585">Role: Trade Runner</text>
+    <text x="20" y="105" font-family="system-ui, sans-serif" font-size="14" fill="#aaa">Model: gemini-2.5-flash-lite</text>
+    <text x="20" y="135" font-family="system-ui, sans-serif" font-size="13" fill="#888">• Executes via Kraken CLI</text>
+    <text x="20" y="155" font-family="system-ui, sans-serif" font-size="13" fill="#888">• Routes through Risk Router</text>
+    <text x="20" y="175" font-family="system-ui, sans-serif" font-size="13" fill="#888">• Manages positions 24/7</text>
+  </g>
+  
+  <!-- Auditor -->
+  <g transform="translate(820, 180)">
+    <rect width="280" height="200" rx="16" fill="rgba(74,222,128,0.1)" stroke="url(#auditGrad)" stroke-width="2"/>
+    <rect width="280" height="50" rx="16" fill="url(#auditGrad)"/>
+    <text x="140" y="33" text-anchor="middle" font-family="system-ui, sans-serif" font-size="20" font-weight="bold" fill="#fff">📜 AUDITOR</text>
+    <text x="20" y="80" font-family="system-ui, sans-serif" font-size="14" fill="#4ade80">Role: Trust Layer</text>
+    <text x="20" y="105" font-family="system-ui, sans-serif" font-size="14" fill="#aaa">Model: gemini-2.5-pro</text>
+    <text x="20" y="135" font-family="system-ui, sans-serif" font-size="13" fill="#888">• Signs EIP-712 trade intents</text>
+    <text x="20" y="155" font-family="system-ui, sans-serif" font-size="13" fill="#888">• Publishes to ERC-8004</text>
+    <text x="20" y="175" font-family="system-ui, sans-serif" font-size="13" fill="#888">• Generates verifiable proof</text>
+  </g>
+  
+  <!-- Flow Arrows -->
+  <!-- Sentry → Executioner -->
+  <path d="M 380 280 L 460 280" stroke="#4cc9f0" stroke-width="3" fill="none" marker-end="url(#arrowBlue)" filter="url(#glow)"/>
+  <text x="420" y="270" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#4cc9f0">opportunities</text>
+  
+  <!-- Executioner → Auditor -->
+  <path d="M 740 280 L 820 280" stroke="#f72585" stroke-width="3" fill="none" marker-end="url(#arrowPink)" filter="url(#glow)"/>
+  <text x="780" y="270" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#f72585">trade intents</text>
+  
+  <!-- State Layer Box -->
+  <g transform="translate(350, 440)">
+    <rect width="500" height="100" rx="12" fill="rgba(255,255,255,0.05)" stroke="#666" stroke-width="1" stroke-dasharray="5,5"/>
+    <text x="250" y="35" text-anchor="middle" font-family="system-ui, sans-serif" font-size="18" font-weight="bold" fill="#fff">📁 STATE LAYER</text>
+    <text x="250" y="60" text-anchor="middle" font-family="system-ui, sans-serif" font-size="13" fill="#888">market.json • portfolio.json • trades.log • attestations.json</text>
+    <text x="250" y="80" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#666">Shared file system for agent coordination</text>
+  </g>
+  
+  <!-- Arrows to State Layer -->
+  <path d="M 240 380 L 240 420 L 350 460" stroke="#4cc9f0" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+  <path d="M 600 380 L 600 440" stroke="#f72585" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+  <path d="M 960 380 L 960 420 L 850 460" stroke="#4ade80" stroke-width="2" fill="none" stroke-dasharray="4,4"/>
+  
+  <!-- External Services -->
+  <g transform="translate(50, 600)">
+    <rect width="200" height="80" rx="8" fill="rgba(255,255,255,0.03)" stroke="#555" stroke-width="1"/>
+    <text x="100" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#fff">🏦 Kraken</text>
+    <text x="100" y="50" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#888">CEX Execution</text>
+    <text x="100" y="68" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#666">CLI + REST API</text>
+  </g>
+  
+  <g transform="translate(300, 600)">
+    <rect width="200" height="80" rx="8" fill="rgba(255,255,255,0.03)" stroke="#555" stroke-width="1"/>
+    <text x="100" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#fff">🌊 Aerodrome</text>
+    <text x="100" y="50" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#888">DEX Liquidity</text>
+    <text x="100" y="68" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#666">Base Network</text>
+  </g>
+  
+  <g transform="translate(550, 600)">
+    <rect width="200" height="80" rx="8" fill="rgba(255,255,255,0.03)" stroke="#555" stroke-width="1"/>
+    <text x="100" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#fff">📋 ERC-8004</text>
+    <text x="100" y="50" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#888">Trust Registry</text>
+    <text x="100" y="68" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#666">Base Sepolia</text>
+  </g>
+  
+  <g transform="translate(800, 600)">
+    <rect width="200" height="80" rx="8" fill="rgba(255,255,255,0.03)" stroke="#555" stroke-width="1"/>
+    <text x="100" y="30" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" font-weight="bold" fill="#fff">🦅 OpenClaw</text>
+    <text x="100" y="50" text-anchor="middle" font-family="system-ui, sans-serif" font-size="12" fill="#888">Orchestration</text>
+    <text x="100" y="68" text-anchor="middle" font-family="system-ui, sans-serif" font-size="11" fill="#666">Heartbeat + Cron</text>
+  </g>
+  
+  <!-- Arrow Markers -->
+  <defs>
+    <marker id="arrowBlue" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#4cc9f0"/>
+    </marker>
+    <marker id="arrowPink" markerWidth="10" markerHeight="10" refX="9" refY="3" orient="auto">
+      <path d="M0,0 L0,6 L9,3 z" fill="#f72585"/>
+    </marker>
+  </defs>
+  
+  <!-- Footer -->
+  <text x="600" y="760" text-anchor="middle" font-family="system-ui, sans-serif" font-size="14" fill="#666">
+    LabLab AI Trading Agents Hackathon • March 30 - April 12, 2026 • Prize Target: $55,000
+  </text>
+</svg>
